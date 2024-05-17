@@ -14,22 +14,19 @@ const NavBar = () => {
                     <nav className="collapse navbar-collapse barraNav" id="barraNav">
                         <ul className="navbar-nav listaHeader" id="listaHeader">
                             <li className="nav-item navegacion">
-                                <CartWidget /> {/*LLAMAMOS A 'CartWidget*/}
-                            </li>
-                            <li className="nav-item navegacion">
                                 <a className="nav-link itemNav" href="#">Home</a>
                             </li>
                             <li className="nav-item navegacion">
                                 <a className="nav-link itemNav" href="#">Ofertas</a>
                             </li>
                             <li className="nav-item navegacion">
-                                <a className="nav-link itemNav" href="#">Nosotros</a>
-                            </li>
-                            <li className="nav-item navegacion">
                                 <a className="nav-link itemNav" href="#">Sign In</a>
                             </li>
                             <li className="nav-item navegacion">
                                 <a className="nav-link itemNav" href="#">Log In</a>
+                            </li>
+                            <li className="nav-item navegacion">
+                                <CartWidget /> {/*LLAMAMOS A 'CartWidget*/}
                             </li>
                         </ul>
                     </nav>
