@@ -1,0 +1,57 @@
+.itemNav {
+    height: 40px;
+    font-size: 1rem;
+    color: whitesmoke;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.itemNav:visited {
+    color: whitesmoke;
+}
+
+.itemNav:focus {
+    transform: scale(1);
+    color: whitesmoke;
+}
+
+.itemNav:hover {
+    transform: scale(1.1);
+    color: #FAEBD7;
+}
+
+.itemNav:hover .h1Header {
+    color: #FAEBD7;
+}
+
+.logoCarrito {
+    position: relative;
+    color: whitesmoke;
+    margin: 0px 10px;
+    font-size: 25px;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.cantidadCarrito {
+    position: absolute;
+    top: 1px;
+    margin-left: 15px;
+    color: black;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.logoCarrito:hover .cantidadCarrito {
+    transform: scale(1);
+    background-color: #FAEBD7;
+}

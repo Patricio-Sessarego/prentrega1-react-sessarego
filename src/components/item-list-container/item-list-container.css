@@ -1,0 +1,66 @@
+.productos {
+    background-color: black;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 330px;
+    grid-template-rows: 480px;
+    text-align: center;
+    padding-top: 141px;
+    padding-bottom: 140px;
+}
+
+.producto {
+    border: 3px solid #333;
+    background-color: #222222;
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    box-shadow: 3px 3px 5px 0px whitesmoke, -3px -3px 5px 0px whitesmoke, 3px -3px 5px 0px whitesmoke, -3px 3px 5px 0px whitesmoke;
+}
+
+  .producto:hover {
+    transform: scale(1.1);
+    box-shadow: 3px 3px 15px rgba(255, 255, 255, 0.5), 3px -3px 15px rgba(255, 255, 255, 0.5), -3px -3px 15px rgba(255, 255, 255, 0.5), -3px 3px 15px rgba(255, 255, 255, 0.5);
+}
+
+.fotoProducto {
+    object-fit: contain;
+    width: 100%;
+}
+  
+.nombreProducto {
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    text-transform: uppercase;
+    color: whitesmoke;
+    font-size: 1.5rem;
+    margin: 5px;
+}
+
+  .nombreProducto:hover {
+    color: #FAEBD7;
+}
+  
+.precioProducto {
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    color: whitesmoke;
+    font-size: 1.25rem;
+    margin: 5px;
+}
+
+.precioProducto:hover {
+    color: #FAEBD7;
+}
+  
+.btnComprar {
+    background-color: #333;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+    color: whitesmoke;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    margin-top: 5px;
+}
+
+.btnComprar:hover {
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5), 3px -3px 10px rgba(255, 255, 255, 0.5), -3px -3px 10px rgba(255, 255, 255, 0.5), -3px 3px 10px rgba(255, 255, 255, 0.5);
+}
