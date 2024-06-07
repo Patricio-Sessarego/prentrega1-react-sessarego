@@ -1,0 +1,172 @@
+.imgPrincipal {
+    grid-area: imgPrincipal;
+}
+  
+.imgSecundariaUno {
+    grid-area: imgSecundariaUno;
+}
+  
+.imgSecundariaDos {
+    grid-area: imgSecundariaDos;
+}
+  
+.imgSecundariaTres {
+    grid-area: imgSecundariaTres;
+}
+  
+.imgSecundariaCuatro {
+    grid-area: imgSecundariaCuatro;
+}
+  
+.productoNombre {
+    grid-area: nombreProducto;
+}
+  
+.productoPrecio {
+    grid-area: precioProducto;
+}
+  
+.comprarBtn {
+    grid-area: botonComprar;
+}
+  
+.caracteristicasProducto {
+    grid-area: caracteristicasProducto;
+}
+  
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 640px;
+    height: 640px;
+    padding-top: 100px;
+    color: whitesmoke;
+    background-color: black;
+}
+  
+.gridContainer {
+    display: grid;
+    grid-template-columns: 100px 400px 300px;
+    grid-template-rows: 60px 60px repeat(3, 120px);
+    grid-template-areas: "imgSecundariaUno imgPrincipal nombreProducto" "imgSecundariaUno imgPrincipal precioProducto" "imgSecundariaDos imgPrincipal caracteristicasProducto" "imgSecundariaTres imgPrincipal caracteristicasProducto" "imgSecundariaCuatro imgPrincipal botonComprar";
+    padding: 40px 20px;
+    column-gap: 40px;
+    border-radius: 8px;
+    background-color: #1F1F1F;
+}
+  
+.imgPrincipal {
+    width: 400px;
+    height: 460px;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    box-shadow: 5px 5px 5px 1px rgba(255, 255, 255, 0.5), -5px -5px 5px 1px rgba(255, 255, 255, 0.5), 5px -5px 5px 1px rgba(255, 255, 255, 0.5), -5px 5px 5px 1px rgba(255, 255, 255, 0.5);
+}
+
+.imgPrincipal:hover {
+    transform: scale(1.1);
+    border: 2px solid whitesmoke;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 2px 2px 5px 0px whitesmoke, -2px -2px 5px 0px whitesmoke, 2px -2px 5px 0px whitesmoke, -2px 2px 5px 0px whitesmoke;
+}
+  
+.imgSecundaria {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    border-radius: 8px;
+    object-fit: contain;
+    background-color: whitesmoke;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    box-shadow: 5px 5px 5px 1px rgba(255, 255, 255, 0.5), -5px -5px 5px 1px rgba(255, 255, 255, 0.5), 5px -5px 5px 1px rgba(255, 255, 255, 0.5), -5px 5px 5px 1px rgba(255, 255, 255, 0.5);
+}
+
+.imgSecundaria:hover {
+    transform: scale(1.1);
+    border: 2px solid whitesmoke;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 2px 2px 5px 0px whitesmoke, -2px -2px 5px 0px whitesmoke, 2px -2px 5px 0px whitesmoke, -2px 2px 5px 0px whitesmoke;
+}
+  
+.productoNombre {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+  
+.productoPrecio {
+    font-size: 1.5rem;
+}
+  
+.caracteristica {
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+  
+.containerComprarBtn {
+    border: none;
+    display: flex;
+    justify-content: flex-start;
+    background-color: #1F1F1F;
+}
+  
+.comprarBtn {
+    width: 290px;
+    cursor: pointer;
+    margin-top: 50px;
+    color: #1F1F1F;
+    font-weight: bold;
+    padding: 10px 0px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: whitesmoke;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    box-shadow: 5px 5px 5px 1px rgba(255, 255, 255, 0.5), -5px -5px 5px 1px rgba(255, 255, 255, 0.5), 5px -5px 5px 1px rgba(255, 255, 255, 0.5), -5px 5px 5px 1px rgba(255, 255, 255, 0.5);
+}
+
+.comprarBtn:hover {
+    transform: scale(1.1);
+    border: 2px solid whitesmoke;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 2px 2px 5px 0px whitesmoke, -2px -2px 5px 0px whitesmoke, 2px -2px 5px 0px whitesmoke, -2px 2px 5px 0px whitesmoke;
+}
+
+.loadingContainer {
+    transform: translate(-50%, -50%);
+    position: fixed;
+    left: 48%;
+    top: 50%;
+}
+
+.loadingSpinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    animation: spin 1s linear infinite;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    margin-left: 10px;
+    height: 40px;
+    width: 40px;
+    left: 90%;
+    top: 0%;
+}
+
+.loadingText {
+    color: whitesmoke;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

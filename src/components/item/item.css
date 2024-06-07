@@ -1,0 +1,95 @@
+.producto {
+    border: 3px solid #333;
+    background-color: #222222;
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    box-shadow: 3px 3px 5px 0px whitesmoke, -3px -3px 5px 0px whitesmoke, 3px -3px 5px 0px whitesmoke, -3px 3px 5px 0px whitesmoke;
+}
+
+  .producto:hover {
+    transform: scale(1.1);
+    box-shadow: 3px 3px 15px rgba(255, 255, 255, 0.5), 3px -3px 15px rgba(255, 255, 255, 0.5), -3px -3px 15px rgba(255, 255, 255, 0.5), -3px 3px 15px rgba(255, 255, 255, 0.5);
+}
+
+.producto-1 {
+    object-fit: contain;
+    width: 100%;
+}
+
+.producto-2 {
+    object-fit: contain;
+    width: 100%;
+}
+
+.producto-3 {
+    object-fit: contain;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 77px;
+}
+
+.producto-4 {
+    object-fit: contain;
+    width: 100%;
+    margin-top: 70px;
+    margin-bottom: 74px;
+}
+
+.producto-5 {
+    object-fit: contain;
+    width: 100%;
+    height: 324px;
+}
+
+.producto-6 {
+    object-fit: contain;
+    width: 100%;
+}
+
+.fotoProducto {
+    object-fit: contain;
+    width: 100%;
+}
+  
+.nombreProducto {
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    text-transform: uppercase;
+    color: whitesmoke;
+    font-size: 1.5rem;
+    margin: 5px;
+}
+
+  .nombreProducto:hover {
+    color: #FAEBD7;
+}
+  
+.precioProducto {
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    color: whitesmoke;
+    font-size: 1.25rem;
+    margin: 5px;
+}
+
+.precioProducto:hover {
+    color: #FAEBD7;
+}
+  
+.btnComprar {
+    background-color: #333;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+    color: whitesmoke;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    margin-top: 5px;
+}
+
+.btnComprar:hover {
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5), 3px -3px 10px rgba(255, 255, 255, 0.5), -3px -3px 10px rgba(255, 255, 255, 0.5), -3px 3px 10px rgba(255, 255, 255, 0.5);
+}
+
+.linkBtnComprar {
+    text-decoration: none;
+    color: inherit;
+}
