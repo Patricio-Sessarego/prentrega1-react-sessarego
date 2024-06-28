@@ -31,7 +31,7 @@ const NavBar = () => {
                                 <a className="nav-link itemNav" href="#">Log In</a>
                             </li>
                             <li className="nav-item navegacion">
-                                <CartWidget /> {/*LLAMAMOS A 'CartWidget*/}
+                                <Link to={'/Carrito'} className='linkCarrito'><CartWidget /> {/*LLAMAMOS A 'CartWidget*/}</Link>
                             </li>
                         </ul>
                     </nav>

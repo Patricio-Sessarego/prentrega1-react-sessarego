@@ -20,16 +20,22 @@
     width: 100%;
 }
 
+.producto-2 .fotoProducto {
+    margin-top: 50px;
+    margin-bottom: 77px;
+}
+
 .producto-3 {
     object-fit: contain;
     width: 100%;
-    margin-top: 50px;
-    margin-bottom: 77px;
 }
 
 .producto-4 {
     object-fit: contain;
     width: 100%;
+}
+
+.producto-4 .fotoProducto {
     margin-top: 70px;
     margin-bottom: 74px;
 }
@@ -37,12 +43,15 @@
 .producto-5 {
     object-fit: contain;
     width: 100%;
-    height: 324px;
 }
 
 .producto-6 {
     object-fit: contain;
     width: 100%;
+}
+
+.producto-6 .fotoProducto {
+    height: 324px;
 }
 
 .fotoProducto {

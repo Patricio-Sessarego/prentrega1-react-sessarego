@@ -2,10 +2,9 @@ import './item.css'
 import { Link } from 'react-router-dom'
 
 const Item = ({ producto }) => { //RECIBIMOS EL PRODUCTO POR PROP
-    console.log("PRODUCTO: " + producto)
     return(
-        <div className="producto">
-            <img src={producto.imgUno} alt="Foto Producto" className={`'fotoProducto ${producto.className}`}/>
+        <div className={`producto ${producto.className}`}> {/* FALTA AGREGAR LA CLASE 'producto-1/2/3/4/5/6 => ASI ${producto.className} */}
+            <img src={producto.imgUno} alt="Foto Producto" className={`fotoProducto`}/>
             <p className="nombreProducto">{producto.nombre}</p>
             <p className="precioProducto">${producto.precio}</p>
             <button className="btnComprar">

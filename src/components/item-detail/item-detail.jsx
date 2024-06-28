@@ -1,12 +1,19 @@
 import './item-detail.css'
-import { useParams } from 'react-router-dom'
-import { useState , useEffect } from 'react'
+import CartContext from '../../context/context'
 import { getProductoById } from '../../data/asyncmock'
+import { useState , useEffect, useContext } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const ItemDetail = () => {
-    const [producto, setProducto] = useState(null) //ESTADO PARA GUARDAR EL PRODUCTO
+    const [producto , setProducto] = useState(null) //ESTADO PARA GUARDAR EL PRODUCTO
+
+    const [quantity , setQuantity] = useState(1) //ESTADO PARA GUARDAR LA CANTIDAD
 
     const { idProducto } = useParams() //PARAMETRO => ID DEL PRODUCTO
+
+    const { addToCart } = useContext(CartContext) //FUNCION DE CART
+
+    const navigate = useNavigate() //PARA REDIRIGIR CON LA ALERT
 
     useEffect(() => {
         const fetchProducto = async () => {
@@ -30,6 +37,70 @@ const ItemDetail = () => {
                 </div>
             </>
         )
+    }
+
+    const agregarCantidad = () => {
+        if(quantity < producto.stock){
+            setQuantity(cant => cant + 1)
+        }else{
+            Toastify({
+                text: 'NO HAY MAS STOCK DEL PRODUCTO',
+                position: "left",
+                gravity: "top",
+                duration: 2000,
+                style: {
+                    background: "red",
+                    color: "white"
+                },
+                offset: {
+                    y: 200
+                },
+                escapeMarkup: false //PERMITE QUE EL HTML DENTRO DEL TEXTO SE CONVIERTA EN HTML
+            }).showToast()
+        }
+    }
+
+    const restarCantidad = () => {
+        if(quantity > 1){
+            setQuantity(cant => cant - 1)
+        }
+    }
+
+    const handleAddToCart = (prod , quantity) => {
+        if(addToCart(prod , quantity)){
+            Swal.fire({
+                icon: "error",
+                html: `EL PRODUCTO YA SE ENCUENTRA EN EL CARRITO <i class="bi bi-cart-fill"></i>`,
+                confirmButtonText: 'SEGUIR COMPRANDO',
+                cancelButtonText: 'IR AL CARRITO',
+                showCancelButton: true,
+                allowOutsideClick: false,
+            }).then((result) => {
+                if(result.isConfirmed){
+                    navigate('/')
+                }else if(result.dismiss === Swal.DismissReason.cancel){
+                    navigate('/Carrito')
+                }
+            })
+        }else{
+            Swal.fire({
+                icon: "success",
+                html: `PRODUCTO AGREGADO AL CARRITO <i class="bi bi-cart-fill"></i>`,
+                confirmButtonText: 'SEGUIR COMPRANDO',
+                cancelButtonText: 'IR AL CARRITO',
+                showCancelButton: true,
+                allowOutsideClick: false,
+            }).then((result) => {
+                if(result.isConfirmed){
+                    navigate('/')
+                }else if(result.dismiss === Swal.DismissReason.cancel){
+                    navigate('/Carrito')
+                }
+            })
+        }
+
+
+        setQuantity(1)
     }
 
     //PREVIEW DE LAS IMAGENES SECUNDARIAS EN LA IMAGEN PRINCIPAL
@@ -63,20 +134,25 @@ const ItemDetail = () => {
         <>
             <div className="mainContainer">
                 <div className="gridContainer">
-                    <img className="imgPrincipal" id='imgPrincipal' src={producto[0].imgUno} alt="Imagen Producto" />
-                    <img className="imgSecundaria imgSecundariaUno" src={producto[0].imgUno} alt="Sub Imagen Producto" onClick={() => previewImageOnClick(producto[0].imgUno)} onMouseOver={() => previewImageMouseOver(producto[0].imgUno)} onMouseOut={() => previewImgageMouseOut()} />
-                    <img className="imgSecundaria imgSecundariaDos" src={producto[0].imgDos} alt="Sub Imagen Producto" onClick={() => previewImageOnClick(producto[0].imgDos)} onMouseOver={() => previewImageMouseOver(producto[0].imgDos)} onMouseOut={() => previewImgageMouseOut()} />
-                    <img className="imgSecundaria imgSecundariaTres" src={producto[0].imgTres} alt="Sub Imagen Producto" onClick={() => previewImageOnClick(producto[0].imgTres)} onMouseOver={() => previewImageMouseOver(producto[0].imgTres)} onMouseOut={() => previewImgageMouseOut()} />
-                    <img className="imgSecundaria imgSecundariaCuatro" src={producto[0].imgCuatro} alt="Sub Imagen Producto" onClick={() => previewImageOnClick(producto[0].imgCuatro)} onMouseOver={() => previewImageMouseOver(producto[0].imgCuatro)} onMouseOut={() => previewImgageMouseOut()} />
-                    <h1 className="productoNombre">{producto[0].nombre}</h1>
-                    <p className="productoPrecio">${producto[0].precio}</p>
-                    <button className="containerComprarBtn"><a href="#" className="comprarBtn">Comprar</a></button>
+                    <img className="imgPrincipal" id='imgPrincipal' src={producto.imgUno} alt="Imagen Producto" />
+                    <img className="imgSecundaria imgSecundariaUno" src={producto.imgUno} alt="Sub Imagen Producto" onClick={() => previewImageOnClick(producto.imgUno)} onMouseOver={() => previewImageMouseOver(producto.imgUno)} onMouseOut={() => previewImgageMouseOut()} />
+                    <img className="imgSecundaria imgSecundariaDos" src={producto.imgDos} alt="Sub Imagen Producto" onClick={() => previewImageOnClick(producto.imgDos)} onMouseOver={() => previewImageMouseOver(producto.imgDos)} onMouseOut={() => previewImgageMouseOut()} />
+                    <img className="imgSecundaria imgSecundariaTres" src={producto.imgTres} alt="Sub Imagen Producto" onClick={() => previewImageOnClick(producto.imgTres)} onMouseOver={() => previewImageMouseOver(producto.imgTres)} onMouseOut={() => previewImgageMouseOut()} />
+                    <img className="imgSecundaria imgSecundariaCuatro" src={producto.imgCuatro} alt="Sub Imagen Producto" onClick={() => previewImageOnClick(producto.imgCuatro)} onMouseOver={() => previewImageMouseOver(producto.imgCuatro)} onMouseOut={() => previewImgageMouseOut()} />
+                    <h1 className="productoNombre">{producto.nombre}</h1>
+                    <p className="productoPrecio">${producto.precio}</p>
+                    <div className='containerCantidad'>
+                        <button className='btnAgregarCantidad' onClick={agregarCantidad}><i className="bi bi-plus-circle-fill"></i></button>
+                        <p className='numeroCantidad'>{quantity}</p>
+                        <button className='btnRestarCantidad' onClick={restarCantidad}><i className="bi bi-dash-circle-fill"></i></button>
+                    </div>
+                    <button className="containerComprarBtn" onClick={() => handleAddToCart(producto , quantity)}><i className="bi bi-cart-fill comprarBtn"></i></button>
                     <ul className='caracteristicasProducto'>
-                        <li className='caracteristica'>{producto[0].descripcionUno}</li>
-                        <li className='caracteristica'>{producto[0].descripcionDos}</li>
-                        <li className='caracteristica'>{producto[0].descripcionTres}</li>
-                        <li className='caracteristica'>{producto[0].descripcionCuatro}</li>
-                        <li className='caracteristica'>{producto[0].descripcionCinco}</li>
+                        <li className='caracteristica'>{producto.descripcionUno}</li>
+                        <li className='caracteristica'>{producto.descripcionDos}</li>
+                        <li className='caracteristica'>{producto.descripcionTres}</li>
+                        <li className='caracteristica'>{producto.descripcionCuatro}</li>
+                        <li className='caracteristica'>{producto.descripcionCinco}</li>
                     </ul>
                 </div>
             </div>

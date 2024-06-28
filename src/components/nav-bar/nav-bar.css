@@ -47,11 +47,16 @@
     background-color: #222222;
     color: whitesmoke;
 }
+
+.linkCarrito {
+    text-decoration: none;
+}
   
 .itemNav {
     height: 40px;
     font-size: 1rem;
     color: whitesmoke;
+    text-decoration: none;
     text-transform: uppercase;
     transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }

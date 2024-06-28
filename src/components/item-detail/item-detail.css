@@ -25,6 +25,10 @@
 .productoPrecio {
     grid-area: precioProducto;
 }
+
+.containerCantidad {
+    grid-area: botonCantidad;
+}
   
 .comprarBtn {
     grid-area: botonComprar;
@@ -48,8 +52,8 @@
 .gridContainer {
     display: grid;
     grid-template-columns: 100px 400px 300px;
-    grid-template-rows: 60px 60px repeat(3, 120px);
-    grid-template-areas: "imgSecundariaUno imgPrincipal nombreProducto" "imgSecundariaUno imgPrincipal precioProducto" "imgSecundariaDos imgPrincipal caracteristicasProducto" "imgSecundariaTres imgPrincipal caracteristicasProducto" "imgSecundariaCuatro imgPrincipal botonComprar";
+    grid-template-rows: 60px 60px repeat(2, 120px) 60px 60px;
+    grid-template-areas: "imgSecundariaUno imgPrincipal nombreProducto" "imgSecundariaUno imgPrincipal precioProducto" "imgSecundariaDos imgPrincipal caracteristicasProducto" "imgSecundariaTres imgPrincipal caracteristicasProducto" "imgSecundariaCuatro imgPrincipal botonCantidad" "imgSecundariaCuatro imgPrincipal botonComprar";
     padding: 40px 20px;
     column-gap: 40px;
     border-radius: 8px;
@@ -110,28 +114,101 @@
     text-transform: uppercase;
     font-size: 1rem;
 }
+
+.containerCantidad {
+    width: 290px;
+    height: 48px;
+    display: flex;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    align-items: center;
+    align-self: flex-end;
+    justify-content: center;
+    background-color: whitesmoke;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    box-shadow: 5px 5px 5px 1px rgba(255, 255, 255, 0.5), -5px -5px 5px 1px rgba(255, 255, 255, 0.5), 5px -5px 5px 1px rgba(255, 255, 255, 0.5), -5px 5px 5px 1px rgba(255, 255, 255, 0.5);
+}
+
+.btnAgregarCantidad {
+    width: 100px;
+    border: none;
+    font-size: 20px;
+    color: #222222;
+    text-align: center;
+    background-color: whitesmoke;
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.btnRestarCantidad {
+    width: 100px;
+    border: none;
+    font-size: 20px;
+    color: #222222;
+    text-align: center;
+    background-color: whitesmoke;
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.numeroCantidad {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #1F1F1F;
+    margin-top: 15px;
+}
   
 .containerComprarBtn {
+    width: 290px;
     border: none;
     display: flex;
     justify-content: flex-start;
     background-color: #1F1F1F;
 }
+
+.containerCantidad:hover,
+.containerCantidad:hover .btnAgregarCantidad,
+.containerCantidad:hover .btnRestarCantidad,
+.containerCantidad:hover .numeroCantidad {
+    transform: scale(1.1);
+    background-color: #808080;
+    border: 2px solid whitesmoke;
+    box-shadow: 2px 2px 5px 0px whitesmoke, -2px -2px 5px 0px whitesmoke, 2px -2px 5px 0px whitesmoke, -2px 2px 5px 0px whitesmoke;
+}
+
+.containerCantidad:hover .btnAgregarCantidad,
+.containerCantidad:hover .btnRestarCantidad,
+.containerCantidad:hover .numeroCantidad {
+    background-color: inherit;
+    box-shadow: none;
+    transform: none;
+    border: none;
+}
   
 .comprarBtn {
     width: 290px;
+    max-height: 48px;
+    font-size: 50px;
     cursor: pointer;
-    margin-top: 50px;
     color: #1F1F1F;
     font-weight: bold;
     padding: 10px 0px;
     border-radius: 8px;
     text-decoration: none;
+    align-self: flex-end;
+    margin-bottom: 20px;
     text-transform: uppercase;
     background-color: whitesmoke;
     border: 2px solid rgba(255, 255, 255, 0.5);
     transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
     box-shadow: 5px 5px 5px 1px rgba(255, 255, 255, 0.5), -5px -5px 5px 1px rgba(255, 255, 255, 0.5), 5px -5px 5px 1px rgba(255, 255, 255, 0.5), -5px 5px 5px 1px rgba(255, 255, 255, 0.5);
+}
+
+.bi-cart-fill{
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
 }
 
 .comprarBtn:hover {

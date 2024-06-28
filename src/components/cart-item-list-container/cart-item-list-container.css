@@ -1,0 +1,112 @@
+.linkHome {
+    border: none;
+    text-decoration: none;
+}
+
+.tituloCarrito {
+    margin-left: 25%;
+    margin-top: 100px;
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+
+.tituloCarrito:hover {
+    color: bisque;
+}
+
+.containerCarritoVacio {
+    width: 100%;
+    display: flex;
+}
+
+.tituloCarritoVacio {
+    display: flex;
+    margin-left: 25%;
+    margin-top: 100px;
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+
+.tituloCarritoVacio:hover {
+    color: bisque;
+}
+
+.carritoVacio {
+    display: flex;
+    font-size: 40px;
+    margin-left: 40%;
+    margin-top: 100px;
+    color: whitesmoke;
+    text-decoration: none;
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.carritoVacio:hover {
+    color: bisque;
+    transform: scale(1.1);
+}
+
+.containerCarrito {
+    width: 800px;
+    height: 150px;
+    max-width: 800px;
+    margin-top: 25px;
+    margin-left: 25%;
+    max-height: 150px;
+    margin-bottom: 40px;
+    color: whitesmoke;
+    border: 3px solid #333;
+    background-color: #222222;
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    box-shadow: 3px 3px 5px 0px whitesmoke, -3px -3px 5px 0px whitesmoke, 3px -3px 5px 0px whitesmoke, -3px 3px 5px 0px whitesmoke;
+
+    display: grid;
+    grid-template-rows: 144px;
+    grid-template-columns: 100px 300px 100px 150px 150px;
+}
+
+.totalCarrito {
+    margin-left: 53.75%;
+    margin-top: 20px;
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+
+.totalCarrito:hover {
+    color: bisque;
+}
+
+.btnComprarAhora {
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 58.75%;
+    border-radius: 10px;
+    color: whitesmoke;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #222222;
+}
+
+.btnComprarAhora:hover {
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5), 3px -3px 10px rgba(255, 255, 255, 0.5), -3px -3px 10px rgba(255, 255, 255, 0.5), -3px 3px 10px rgba(255, 255, 255, 0.5);
+}
+
+.btnSeguirComprando {
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 57.55%;
+    border-radius: 10px;
+    color: whitesmoke;
+    margin-bottom: 100px;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #222222;
+}
+
+.btnSeguirComprando:hover {
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5), 3px -3px 10px rgba(255, 255, 255, 0.5), -3px -3px 10px rgba(255, 255, 255, 0.5), -3px 3px 10px rgba(255, 255, 255, 0.5);
+}

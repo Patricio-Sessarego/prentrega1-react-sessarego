@@ -1,0 +1,95 @@
+.containerCarrito {
+    width: 800px;
+    height: 150px;
+    max-width: 800px;
+    margin-top: 25px;
+    margin-left: 25%;
+    max-height: 150px;
+    margin-bottom: 40px;
+    color: whitesmoke;
+    border: 3px solid #333;
+    background-color: #222222;
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    box-shadow: 3px 3px 5px 0px whitesmoke, -3px -3px 5px 0px whitesmoke, 3px -3px 5px 0px whitesmoke, -3px 3px 5px 0px whitesmoke;
+
+    display: grid;
+    grid-template-rows: 144px;
+    grid-template-columns: 100px 300px 100px 150px 150px;
+}
+
+.containerCarrito:hover {
+    transform: scale(1.1);
+}
+
+.imgCarrito {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    object-fit: contain;
+}
+
+.nombreProductoCarrito {
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+
+.nombreCarrito {
+    font-size: 20px;
+    margin-top: 55px;
+    margin-left: 30px;
+}
+
+.precioProductoCarrito {
+    position: sticky;
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+
+.precioCarrito {
+    font-size: 20px;
+    margin-top: 55px;
+    margin-left: 50px;
+}
+
+.containerCantidadCarrito {
+    display: flex;
+    background-color: #222222;
+}
+
+.btnAgregarCantidadCarrito {
+    border: none;
+    font-size: 20px;
+    margin-left: 100px;
+    color: whitesmoke;
+    background-color: #222222;
+}
+
+.btnRestarCantidadCarrito {
+    border: none;
+    z-index: 1000;
+    font-size: 20px;
+    margin-left: 25px;
+    position: relative;
+    color: whitesmoke;
+    background-color: #222222;
+}
+
+.numeroCantidadCarrito {
+    border: none;
+    font-size: 20px;
+    margin-top: 55px;
+    margin-left: 20px;
+    color: whitesmoke;
+}
+
+.btnEliminarCarrito {
+    display: flex;
+}
+
+.btnEliminar {
+    border: none;
+    font-size: 20px;
+    margin-left: 110px;
+    color: whitesmoke;
+    background-color: #222222;
+}
