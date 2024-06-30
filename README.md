@@ -18,5 +18,5 @@
 - **Almacenamiento y Autenticación con Firebase:** Utiliza Firebase para la gestión de datos y autenticación de usuarios.
 
 ## Instalación
-#### Clonar el Repositoria
+#### Clonar el Repositorio
 git clone https://github.com/Patricio-Sessarego/prentrega1-react-sessarego
